@@ -17,10 +17,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('notes', 'NotesController@index');
+/*Forma de ponerlo uno a uno
+ * Route::get('notes', 'NotesController@index');
 
 Route::post('notes', 'NotesController@store');
 
 Route::get('notes/create', 'NotesController@create');
 
-Route::get('notes/{note}', 'NotesController@show')->where('note', '[0-9]+');
+Route::get('notes/{note}', 'NotesController@show')->where('note', '[0-9]+');*/
+
+//forma de ponerlo todos a la vez
+Route::resource('notes', 'NotesController');
