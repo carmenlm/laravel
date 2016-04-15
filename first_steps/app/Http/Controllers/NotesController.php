@@ -18,7 +18,7 @@ class NotesController extends Controller
     public function index()
     {
         //pagina principal del modulo
-        $notes = Note::all();
+        $notes = Note::paginate(20);
 
         return view('notes/list', compact('notes'));
     }
