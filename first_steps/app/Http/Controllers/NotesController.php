@@ -43,6 +43,10 @@ class NotesController extends Controller
      */
     public function store(Request $request)
     {
+
+        $this->validate($request, [
+            'note' => ['required', 'max:200']
+        ]);
         //
         $data = $request->all();
 
