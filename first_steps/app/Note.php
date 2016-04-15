@@ -8,4 +8,7 @@ class Note extends Model
 {
     //
     protected $fillable = ['note'];
+    
+
+    
 }
