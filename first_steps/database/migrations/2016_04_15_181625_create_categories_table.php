@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateNotesTable extends Migration
+class CreateCategoriesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,11 +12,11 @@ class CreateNotesTable extends Migration
      */
     public function up()
     {
-        Schema::create('notes', function (Blueprint $table) {
+        Schema::create('categories', function (Blueprint $table) {
             $table->increments('id');
-            $table->mediumText('note');
-            $table->unsignedInteger('category_id')->nullable()->index();
 
+            $table->string('name', 100);
+            
             $table->timestamps();
         });
     }
@@ -28,6 +28,6 @@ class CreateNotesTable extends Migration
      */
     public function down()
     {
-        Schema::drop('notes');
+        Schema::drop('categories');
     }
 }
